@@ -1,14 +1,15 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var logger = require("morgan");
-var mongo = require("./middleWare/connection");
-var usersRouter = require("./routes/users");
-var companyRouter = require("./routes/company");
 var registerRouter = require("./routes/register");
+var companyRouter = require("./routes/company");
+var mongo = require("./middleWare/connection");
+var cookieParser = require('cookie-parser');
+var usersRouter = require("./routes/users");
 var indexRouter = require("./routes/index");
-var cors = require("cors");
+var createError = require("http-errors");
 const dotenv = require("dotenv");
+var express = require("express");
+var logger = require("morgan");
+var path = require("path");
+var cors = require("cors");
 var app = express();
 
 //^--------------------------* DB CONNECTIONS *--------------------------^//
@@ -23,6 +24,7 @@ app.set("view engine", "jade");
 
 app.use(cors());
 app.use(logger("dev"));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
