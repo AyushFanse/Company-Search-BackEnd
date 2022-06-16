@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.jsx",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "AyushFanse",
   "license": "ISC",
