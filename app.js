@@ -1,7 +1,6 @@
 var registerRouter = require("./routes/register");
 var companyRouter = require("./routes/company");
 var mongo = require("./middleWare/connection");
-var cookieParser = require('cookie-parser');
 var usersRouter = require("./routes/users");
 var indexRouter = require("./routes/index");
 var createError = require("http-errors");
@@ -24,9 +23,8 @@ app.set("view engine", "jade");
 
 app.use(cors());
 app.use(logger("dev"));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 
 //&--------------------------* ROUTERS *--------------------------&//
 
