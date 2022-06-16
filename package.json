@@ -1,7 +1,7 @@
 {
   "name": "company-search",
   "version": "1.0.0",
-  "main": "app.jsx",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
